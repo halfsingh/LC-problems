@@ -1,24 +1,40 @@
 import java.awt.*;
 
 public class Tree {
-    double HeightFt;
-    double trunkdiameterInches;
-    TreeType treeType;
+    private double HeightFt;
+    private double trunkdiameterInches;
+    private TreeType treeType;
     static Color TRUNK_COLOR = new Color(102, 51, 0);
 
-    Tree(double HeightFt, double trunkdiameterInches, TreeType treeType) {
+    public Tree(double HeightFt, double trunkdiameterInches, TreeType treeType) {
         this.HeightFt = HeightFt;
         this.trunkdiameterInches = trunkdiameterInches;
         this.treeType = treeType;
     }
 
-    void grow() {
+    public double getHeightFt() {
+        return this.HeightFt;
+    }
+
+    public double gettrunkdiameterInches() {
+        return this.trunkdiameterInches;
+    }
+
+    public TreeType gettreeType() {
+        return this.treeType;
+    }
+
+    public void settrunkdiameterInches(double trunkdiameterInches) {
+        this.trunkdiameterInches = trunkdiameterInches;
+    }
+
+    public void grow() {
         this.HeightFt = this.HeightFt + 10;
         this.trunkdiameterInches = this.trunkdiameterInches + 1;
 
     }
 
-    void announceTallTree() {
+    public void announceTallTree() {
         if (this.HeightFt > 100) {
             System.out.println("Thats a tall " + this.treeType + " tree!");
         }
