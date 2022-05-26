@@ -25,12 +25,18 @@ public class BankAccount {
         this.owner = owner;
     }
 
-    public void withdraw(double amount) {
-        this.Balance = this.Balance - amount;
+    public double withdraw(double amount) {
+        if (amount > 0) {
+            this.Balance = this.Balance - amount;
+        }
+        return amount;
     }
 
-    public void deposit(double amount) {
-        this.Balance = this.Balance + amount;
+    public double deposit(double amount) {
+        if (amount > 0) {
+            this.Balance = this.Balance + amount;
+        }
+        return amount;
     }
 
 }
