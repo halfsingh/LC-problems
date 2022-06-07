@@ -9,6 +9,10 @@ public class BinaryTree {
     }
 
     public TreeNode find(Integer data) {
+        if (root != null) {
+            return root.find(data);
+        }
+
         return null;
 
     }

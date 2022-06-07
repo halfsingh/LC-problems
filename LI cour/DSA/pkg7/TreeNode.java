@@ -28,4 +28,18 @@ public class TreeNode {
     public void setLeftChild(TreeNode leftChild) {
         this.leftChild = leftChild;
     }
+
+    public TreeNode find(int data) {
+        if (this.data == data) {
+            return this;
+        }
+        if (data <= this.data && leftChild != null) {
+            return this.leftChild.find(data);
+        }
+        if (data >= this.data && rightChild != null) {
+            return this.rightChild.find(data);
+        }
+        return null;
+
+    }
 }
