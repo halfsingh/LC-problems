@@ -4,6 +4,7 @@ public class TreeNode {
     private Integer data;
     private TreeNode leftChild;
     private TreeNode rightChild;
+    private boolean isdeleted = false;
 
     public TreeNode(Integer data) {
         this.data = data;
@@ -30,7 +31,7 @@ public class TreeNode {
     }
 
     public TreeNode find(int data) {
-        if (this.data == data) {
+        if (this.data == data && !isdeleted) {
             return this;
         }
         if (data <= this.data && leftChild != null) {
@@ -57,5 +58,29 @@ public class TreeNode {
                 this.leftChild.insert(data);
             }
         }
+    }
+
+    public void delete() {
+        this.isdeleted = true;
+    }
+
+    public boolean isdeleted() {
+        return isdeleted;
+    }
+
+    public int smallest() {
+        TreeNode current = this;
+        while (this.getLeftChild() != null) {
+            current = current.getLeftChild();
+        }
+        return current.data;
+    }
+
+    public int largest() {
+        TreeNode current = this;
+        while (this.getRightChild() != null) {
+            current = current.getRightChild();
+        }
+        return current.data;
     }
 }
